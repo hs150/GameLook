@@ -1,8 +1,11 @@
 import React from 'react'
-import { useState , useRef} from 'react'
+import { useState , useRef, useEffect} from 'react'
 import Button from './Button';
 import { TiLocationArrow } from 'react-icons/ti';
-import {useGSAP} from '../hooks/useGSAP';
+import { useGSAP } from "@gsap/react";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 const Hero = () => {
 
@@ -11,7 +14,7 @@ const Hero = () => {
     const [isLoading, setIsLoading] = useState(true);
     const[loadedVideos, setLoadedVideos] = useState(0);
 
-    const totalVideos =4;
+    const totalVideos = 3;
     const nextVideoRef = useRef(null);
 
     const handleVideoLoad = () => {
@@ -26,15 +29,74 @@ const upcomingVideoIndex = (currentIndex  % totalVideos) + 1;
         setCurrentIndex(upcomingVideoIndex);
     }
 
-    useGSAP(( ) => {
+    useEffect(() => {
+        if (loadedVideos === totalVideos-1) {
+            setIsLoading(false);
+        }
+    }, [loadedVideos]);
 
-    }, dependencies:{[currentIndex],})
+    useGSAP(( ) => {
+        if(hasClicked){
+            gsap.set('#next-video',{visibility: 'visible'});
+
+         gsap.to('#next-video', {
+                transformOrigin: 'center center',
+                scale: 1,
+                duration: 1,
+                width: '100%',
+                height: '100%',
+                ease: 'power1.inOut',
+                onStart: () => nextVideoRef.current.play(),
+          })
+
+          gsap.from('#current-video', {
+            transformOrigin: 'center center',
+            scale: 0,
+            duration: 1.5,                
+            ease: 'power1.inOut',
+          })
+        }
+
+    }, {dependencies: [currentIndex], revertOnUpdate: true});
+
+    useGSAP(() => {
+        gsap.set('#video-frame',{
+            clipPath: 'polygon(14% 0%,72% 0%,90% 90% , 0% 100%)',
+            borderRadius: '0 0 40% 10%',
+        })
+
+        gsap.from('#video-frame', {
+            clipPath: 'polygon(0% 0%,100% 0,100% 100%,0% 100%)',
+            borderRadius: '0 0 0 0',
+            ease: 'power1.inOut',
+            scrollTrigger: {
+                trigger: '#video-frame',
+                start: 'center center',
+                end: 'bottom center',
+                scrub: true,
+            },
+        })
+
+    })
+
     
     const getVideoSrc = (index) => `/videos/hero-${index}.mp4`;
 
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
+
+        {isLoading && (
+            <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-black">
+            <div className="three-body">
+                <div className="three-body__dot"></div>
+                <div className="three-body__dot"></div>
+                <div className="three-body__dot"></div>
+            </div>
+        </div>
+        )}
+
+
         <div id="video-frame" className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75">
             <div>
                 <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
@@ -62,7 +124,7 @@ const upcomingVideoIndex = (currentIndex  % totalVideos) + 1;
                 />
 
                 <video
-                src={getVideoSrc(currentIndex===totalVideos ? 1 : currentIndex)}
+                src={getVideoSrc(currentIndex===totalVideos -1 ? 1 : currentIndex)}
                 autoPlay
                 loop 
                 muted
