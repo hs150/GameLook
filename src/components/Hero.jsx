@@ -7,6 +7,10 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 const Hero = () => {
 
     const [currentIndex , setCurrentIndex] = useState(1);
@@ -14,7 +18,7 @@ const Hero = () => {
     const [isLoading, setIsLoading] = useState(true);
     const[loadedVideos, setLoadedVideos] = useState(0);
 
-    const totalVideos = 3;
+    const totalVideos = 4;
     const nextVideoRef = useRef(null);
 
     const handleVideoLoad = () => {
@@ -108,7 +112,7 @@ const upcomingVideoIndex = (currentIndex  % totalVideos) + 1;
                            muted
                            id="current-video"
                            className="size-64 origin-center scale-150 object-cover object-center"
-                           onLoadedDate = {handleVideoLoad}
+                           onLoadedData = {handleVideoLoad}
                         />
                     </div>
                 </div>
