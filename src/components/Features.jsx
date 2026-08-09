@@ -11,6 +11,9 @@ const Features = () => {
             Immerse yourself in a rich and ever-expanding universe of games, where each title offers unique experiences and challenges. Our platform is designed to bring together a diverse range of games, from action-packed adventures to strategic puzzles, ensuring that there's something for every type of gamer. Join our community and explore the endless possibilities that await in the world of MetaGames.
         </p>
       </div>
+      <div classname="border-hsla relative mb-7 h-96 w-full overflowh-hidden rounded-md md:h-[65vh]">
+        
+      </div>
     </section>
   )
 }
