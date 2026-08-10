@@ -17,5 +17,5 @@ const Features = () => {
     </section>
   )
 }
-
+// Features add abhi baaki h
 export default Features
