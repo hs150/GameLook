@@ -17,5 +17,5 @@ const Features = () => {
     </section>
   )
 }
-// Time Pqss
+// BC kal karunga kaam ispe
 export default Features
