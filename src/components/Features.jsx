@@ -70,10 +70,10 @@ const Features = () => {
             />
           </div>
 
-        
-
+          // yeh wala section formatting error de rha tha, ighnore kar dya
+          // hatt aisa lund code
          
-          <div className="bento-tilt_2">
+          {/* <div className="bento-tilt_2">
             <div className="flex size-full flex-col justify-between bg-violet-300 p-15">
               <h1 className="bento-title special-font max-w-64 text-black">Mor<b>e</b> C<b>o</b>mi<b>n</b>g <b>s</b>o<b>o</b>n !</h1>
               <TiLocationArrow className="m-5 scale-[5] self-end" />
@@ -82,18 +82,38 @@ const Features = () => {
 
           // code ab yaha hoga
 
+          <div className="bento-tilt_2">
+            <video 
+            src="videos/feature-5.mp4"
+            autoPlay
+            loop
+            muted
+            className="size-full object-cover object-center"
+            />
+          </div>           */}
+
+          <div className="bento-tilt_2 aspect-[2/1] w-full">
+            <div className="flex size-full flex-col justify-between overflow-hidden bg-violet-300 p-10 md:p-12 lg:p-15">
+              <h1 className="bento-title special-font max-w-64 text-black">
+                Mor<b>e</b> C<b>o</b>mi<b>n</b>g <b>s</b>o<b>o</b>n!
+              </h1>
+
+              <TiLocationArrow className="m-5 scale-[5] self-end" />
+            </div>
+          </div>
+
+          <div className="bento-tilt_2 aspect-[2/1] w-full overflow-hidden">
+            <video
+              src="videos/feature-5.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="size-full object-cover object-center"
+            />
+          </div>
+
         </div>
-
-
-
-
-
-        {/* <div className="grid h-[135vh] grid-cols-2 grid-rows-3 gap-7">
-          <div className="col-span-1 row-span-2 bg-red-500">
-            TEST
-          </div> 
-        </div>*/}
-
 
       </div>
     </section>
@@ -101,5 +121,4 @@ const Features = () => {
 }
 // BC kal karunga kaam ispe
 
-// 1:57:30 sec se bento-tilt_2 se
 export default Features
