@@ -1,5 +1,15 @@
 import React from 'react'
 import { TiLocationArrow } from 'react-icons/ti'
+
+const BentoTilt = ({ children , className = '' }) => {
+  return (
+    <div>
+      {children}
+    </div>
+  )
+}
+
+
 const BentoCard = ({ src, title, description }) => {
   return (
     <div className="relative size-full">
@@ -44,13 +54,13 @@ const Features = () => {
 
         <div className=" grid h-[120vh] grid-cols-1 gap-7 md:h-[140vh] md:grid-cols-2 lg:h-[135vh] lg:grid-cols-2 lg:grid-rows-3">
 
-          <div className="bento-tilt_1 col-span-1 row-span-1 lg:col-span-1 lg:row-span-2">
+          <BentoTilt className="bento-tilt_1 col-span-1 row-span-1 lg:col-span-1 lg:row-span-2">
             <BentoCard
               src="/videos/feature-2.mp4"
               title={<>zig<b>m</b>a</>}
               description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
             />
-          </div>
+          </BentoTilt>
 
 
 
@@ -91,6 +101,9 @@ const Features = () => {
             className="size-full object-cover object-center"
             />
           </div>           */}
+
+          // A very vig formatting error is in place can't change anything right now
+          
 
           <div className="bento-tilt_2 aspect-[2/1] w-full">
             <div className="flex size-full flex-col justify-between overflow-hidden bg-violet-300 p-10 md:p-12 lg:p-15">
