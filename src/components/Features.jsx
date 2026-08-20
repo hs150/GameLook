@@ -105,7 +105,7 @@ const Features = () => {
           // A very vig formatting error is in place can't change anything right now
           
 
-          <div className="bento-tilt_2 aspect-[2/1] w-full">
+          {/* <div className="bento-tilt_2 aspect-[2/1] w-full">
             <div className="flex size-full flex-col justify-between overflow-hidden bg-violet-300 p-10 md:p-12 lg:p-15">
               <h1 className="bento-title special-font max-w-64 text-black">
                 Mor<b>e</b> C<b>o</b>mi<b>n</b>g <b>s</b>o<b>o</b>n!
@@ -124,7 +124,10 @@ const Features = () => {
               playsInline
               className="size-full object-cover object-center"
             />
-          </div>
+          </div> */}/
+
+          // Bc kya ho rha h ye
+          // removing some part
 
         </div>
 
@@ -132,6 +135,6 @@ const Features = () => {
     </section>
   )
 }
-// BC kal karunga kaam ispe
+
 
 export default Features
