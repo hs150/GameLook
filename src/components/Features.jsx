@@ -80,8 +80,7 @@ const Features = () => {
             />
           </div>
 
-          // yeh wala section formatting error de rha tha, ighnore kar dya
-          // hatt aisa lund code
+         
          
           {/* <div className="bento-tilt_2">
             <div className="flex size-full flex-col justify-between bg-violet-300 p-15">
@@ -102,7 +101,6 @@ const Features = () => {
             />
           </div>           */}
 
-          // A very vig formatting error is in place can't change anything right now
           
 
           {/* <div className="bento-tilt_2 aspect-[2/1] w-full">
@@ -126,9 +124,7 @@ const Features = () => {
             />
           </div> */}/
 
-          // Bc kya ho rha h ye
-          // removing some part
-
+          
         </div>
 
       </div>

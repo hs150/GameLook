@@ -7,9 +7,14 @@ import Features from './components/Features'
 const App = () => {
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden ">
-      {/* <Navbar />
+      <Navbar />
       <Hero />
-      <About /> */}
+      <About />
+
+
+      // trying to finalise the main code
+
+      just some of it left 
       <Features />
     </main>
   )
